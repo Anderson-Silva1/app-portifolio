@@ -11,9 +11,9 @@ export default function Home() {
         <ProfileSummary />
       </Container>
 
-      {/* <Container>
+      <Container>
         <About />
-      </Container> */}
+      </Container>
     </>
   );
 }

@@ -1,17 +1,20 @@
-import { Content } from "../Content";
 import { Title } from "../Title";
+import { ContentAbout } from "./ContentAbout";
 
 export const About = () => {
   return (
     <main>
-      <Content>
-        <div className="min-h-screen">
+      <div className="min-h-screen">
+        <div>
           <Title title="Sobre Mim">
             Saiba mais sobre minha jornada como desenvolvedor e os projetos em
             que trabalhei
           </Title>
         </div>
-      </Content>
+
+        <div></div>
+      </div>
+      <ContentAbout></ContentAbout>
     </main>
   );
 };

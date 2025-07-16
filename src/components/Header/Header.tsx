@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import { Content } from "../Content";
 import { Menu } from "./Menu";
@@ -8,10 +9,10 @@ import { Button } from "../ui/button";
 
 export const Header = () => {
   const linkOption = [
-    { label: "Início", href: "#home" },
-    { label: "Sobre", href: "#sobre" },
-    { label: "Serviços", href: "#servicos" },
-    { label: "Contato", href: "#contato" },
+    { label: "Início", href: "#" },
+    { label: "Sobre", href: "#" },
+    { label: "Serviços", href: "#" },
+    { label: "Contato", href: "#" },
   ];
 
   return (
@@ -37,6 +38,9 @@ export const Header = () => {
                 {linkOption.map((option) => (
                   <li key={option.label}>
                     <Link
+                      onClick={() =>
+                        alert("Estamos em manuteção, logo estará pronto")
+                      }
                       href={option.href}
                       className="text-muted-foreground hover:text-primary text-base font-medium transition-colors duration-200"
                     >
@@ -52,7 +56,12 @@ export const Header = () => {
             <div className="flex gap-4">
               <Language />
               <ModeToggle />
-              <Link href="/contact">
+              <Link
+                href="#"
+                onClick={() =>
+                  alert("Estamos em manuteção, logo estará pronto")
+                }
+              >
                 <Button className="bg-chart-1 hover:bg-chart-1 cursor-pointer text-white transition duration-700 hover:opacity-80">
                   Entrar em contato
                 </Button>
