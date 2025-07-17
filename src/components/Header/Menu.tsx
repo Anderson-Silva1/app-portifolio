@@ -45,7 +45,7 @@ export const Menu = () => {
         </SheetTrigger>
 
         <SheetContent
-          side="left"
+          side="right"
           className="bg-background w-[260px] border-r p-6 shadow-xl sm:w-[300px]"
         >
           <SheetHeader>
