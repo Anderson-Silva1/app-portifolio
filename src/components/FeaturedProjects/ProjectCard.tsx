@@ -21,7 +21,7 @@ export const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <div
-      className="border-border text-card-foreground bg-card flex min-h-[450px] max-w-sm flex-1 flex-col justify-between rounded-lg border-2 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+      className="border-border text-card-foreground bg-card flex min-h-[450px] max-w-sm min-w-[390px] flex-1 flex-col justify-between rounded-lg border-2 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
       role="article"
       aria-labelledby={`project-title-${title}`}
     >

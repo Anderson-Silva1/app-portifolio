@@ -11,7 +11,7 @@ export const Contact = () => {
           discutir como podemos trabalhar juntos!
         </Title>
 
-        <section className="flex items-center justify-center gap-8 py-16">
+        <section className="flex flex-wrap items-center justify-center gap-8 py-16">
           <ContactCard
             contact="teste@teste.com"
             icon={<MailIcon />}

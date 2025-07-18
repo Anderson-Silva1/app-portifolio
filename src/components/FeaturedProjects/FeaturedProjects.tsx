@@ -13,7 +13,7 @@ export const FeaturedProjects = () => {
           </Title>
         </div>
 
-        <section className="flex items-center justify-center gap-8 pt-24">
+        <section className="flex flex-wrap items-center justify-center gap-8 pt-24">
           <ProjectCard
             techIcons={[
               { src: "vite.svg", alt: "Vite" },
