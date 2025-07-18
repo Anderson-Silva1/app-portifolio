@@ -1,5 +1,5 @@
 import { About } from "@/components/About/About";
-import { Contact } from "@/components/Contact";
+import ContactMain from "@/components/Contact";
 import { FeaturedProjects } from "@/components/FeaturedProjects/FeaturedProjects";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -28,7 +28,7 @@ export default function Home() {
       </Container>
 
       <Container>
-        <Contact />
+        <ContactMain />
       </Container>
 
       <Footer />
@@ -41,5 +41,7 @@ type ContainerProps = {
 };
 
 const Container = ({ children }: ContainerProps) => {
-  return <div className="bg-background min-h-screen">{children}</div>;
+  return (
+    <div className="bg-background min-h-screen min-w-full">{children}</div>
+  );
 };

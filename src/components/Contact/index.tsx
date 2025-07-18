@@ -1,2 +1,2 @@
-import { Contact } from "./Contact";
-export { Contact };
+import { ContactMain } from "./ContactMain";
+export default ContactMain;
