@@ -8,7 +8,6 @@ export const BackendContent = () => {
     { logoName: "typescript.svg", alt: "TypeScript" },
     { logoName: "nextjs.svg", alt: "Next.js" },
     { logoName: "vite.svg", alt: "Vite" },
-
     { logoName: "python.svg", alt: "Python" },
   ];
 

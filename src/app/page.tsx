@@ -1,4 +1,7 @@
 import { About } from "@/components/About/About";
+import { Contact } from "@/components/Contact";
+import { FeaturedProjects } from "@/components/FeaturedProjects/FeaturedProjects";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { ProfileSummary } from "@/components/ProfileSummary";
 import { SkillsAndCompetencies } from "@/components/SkillsAndCompetencies/SkillsAndCompetencies";
@@ -19,6 +22,16 @@ export default function Home() {
       <Container>
         <SkillsAndCompetencies />
       </Container>
+
+      <Container>
+        <FeaturedProjects />
+      </Container>
+
+      <Container>
+        <Contact />
+      </Container>
+
+      <Footer />
     </>
   );
 }

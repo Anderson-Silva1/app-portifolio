@@ -15,6 +15,8 @@ import { BackendContent } from "./BackendContent";
 
 import { ToolsContent } from "./ToolsContent";
 import { DatabaseContent } from "./DatabaseContent";
+import { Button } from "../ui/button";
+import { Softskills } from "./Softtskills";
 
 export type SkillCategory = "frontend" | "backend" | "database" | "tools";
 
@@ -44,9 +46,9 @@ export const SkillsAndCompetencies = () => {
             Tecnologias e ferramentas que uso para dar vida às ideias
           </Title>
 
-          <div className="flex flex-col gap-8 lg:flex-row">
+          <div className="flex flex-col gap-8 pt-24 lg:flex-row">
             {/* Habilidades Técnicas */}
-            <div className="flex-1 p-8">
+            <div className="flex-1 px-8">
               <div className="flex items-center justify-center">
                 <Select
                   value={selectedCategory}
@@ -68,8 +70,12 @@ export const SkillsAndCompetencies = () => {
             </div>
 
             {/* Habilidades pessoais */}
-            <div className="flex-1">
-              <FrontendContent />
+            <div className="flex-1 px-8">
+              <div className="flex flex-col items-center justify-center">
+                <Button variant={"secondary"}>Habilidades Pessoais</Button>
+              </div>
+
+              <Softskills />
             </div>
           </div>
         </div>

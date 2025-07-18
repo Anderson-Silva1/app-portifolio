@@ -1,8 +1,9 @@
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 export const Icon = ({ logoName, alt }: { logoName: string; alt: string }) => {
   return (
-    <div className="flex transform flex-col items-center justify-center rounded-lg bg-slate-100 p-2 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg dark:bg-slate-800">
+    <div className="flex transform flex-col items-center justify-center rounded-lg p-2 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg dark:bg-[#202020]">
       <Image
         className="block"
         src={`/logo/${logoName}`}
