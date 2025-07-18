@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Content } from "../Content";
 import { Menu } from "./Menu";
@@ -8,6 +9,21 @@ import { ModeToggle } from "./mode-toggle";
 import { Button } from "../ui/button";
 
 export const Header = () => {
+  const [prevScrollY, setPrevScrollY] = useState(0);
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrollingUp(currentScrollY < prevScrollY || currentScrollY < 10);
+      setPrevScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollY]);
+
   const linkOption = [
     { label: "Início", href: "#" },
     { label: "Sobre", href: "#" },
@@ -16,13 +32,13 @@ export const Header = () => {
   ];
 
   return (
-    <header className="border-border fixed top-0 flex h-24 w-screen items-center border-b-2 bg-slate-50 dark:bg-black">
+    <header
+      className={`border-border fixed top-0 z-50 flex h-24 w-screen items-center border-b-2 bg-slate-50 transition-transform duration-500 dark:bg-black ${
+        isScrollingUp ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <Content>
         <div className="flex w-full items-center justify-between px-[4%]">
-          {/* <div className="bg-chart-1 flex h-16 w-16 items-center justify-center rounded-full text-2xl/tight font-bold text-white">
-            AS
-          </div> */}
-
           <div className="bg-chart-1 flex h-16 w-16 items-center justify-center rounded-full text-2xl/tight font-bold text-white">
             <Avatar className="h-full w-full">
               <AvatarImage src="/profile/profile2.png" />
