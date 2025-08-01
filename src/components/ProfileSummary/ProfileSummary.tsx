@@ -9,8 +9,8 @@ export const ProfileSummary = () => {
   return (
     <main>
       <Content>
-        <div className="flex min-h-screen flex-col items-center justify-center gap-8 pb-8">
-          <div className="mt-16 flex flex-col gap-4 text-center md:mt-0">
+        <div className="profile-summary-container mt-24 flex flex-col items-center justify-center gap-8 pb-8 md:pb-24">
+          <div className="flex flex-col gap-4 text-center md:mt-0">
             <IntroHeader />
             <IntroDescription />
           </div>

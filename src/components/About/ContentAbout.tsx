@@ -2,26 +2,26 @@ export const ContentAbout = () => {
   return (
     <section className="flex flex-col items-center justify-center gap-16 pb-8 lg:flex-row">
       <div className="w-full flex-1">
-        <Paraghaph>
-          Olá, Meu nome é Anderson, sou um profissional em transição de carreira
-          com sólida experiência técnica em telecomunicações e uma forte
-          inclinação para o desenvolvimento de sistemas.
-        </Paraghaph>
-
-        <Paraghaph>
-          Minha jornada na área de programação teve início durante o ensino
-          médio, na EEEP Ícaro de Sousa Moreira, onde completei o curso técnico
-          em Redes de Computadores. Desde então, tenho me dedicado ao
-          aprimoramento contínuo e à exploração das vastas possibilidades que o
-          universo da tecnologia oferece.
-        </Paraghaph>
-
-        <Paraghaph>
-          Atualmente, busco minha primeira oportunidade como Desenvolvedor
-          Front-End. Tenho interesse em projetos que não apenas gerem valor, mas
-          que também proporcionem crescimento profissional e estejam alinhados
-          com princípios de inovação e propósito.
-        </Paraghaph>
+        <div className="bg-background rounded-none p-8 lg:rounded-2xl">
+          <Paraghaph>
+            Olá, Meu nome é Anderson, sou um profissional em transição de
+            carreira com sólida experiência técnica em telecomunicações e uma
+            forte inclinação para o desenvolvimento de sistemas.
+          </Paraghaph>
+          <Paraghaph>
+            Minha jornada na área de programação teve início durante o ensino
+            médio, na EEEP Ícaro de Sousa Moreira, onde completei o curso
+            técnico em Redes de Computadores. Desde então, tenho me dedicado ao
+            aprimoramento contínuo e à exploração das vastas possibilidades que
+            o universo da tecnologia oferece.
+          </Paraghaph>
+          <Paraghaph>
+            Atualmente, busco minha primeira oportunidade como Desenvolvedor
+            Front-End. Tenho interesse em projetos que não apenas gerem valor,
+            mas que também proporcionem crescimento profissional e estejam
+            alinhados com princípios de inovação e propósito.
+          </Paraghaph>
+        </div>
       </div>
 
       <div className="w-full flex-1 space-y-4 px-4">
@@ -53,7 +53,7 @@ type ParaghaphProps = {
 
 const Paraghaph = ({ children }: ParaghaphProps) => {
   return (
-    <p className="m-auto max-w-[600px] text-left indent-8 text-sm leading-7 [&:not(:first-child)]:mt-4">
+    <p className="m-auto max-w-[600px] text-center indent-8 text-sm leading-7 lg:text-left [&:not(:first-child)]:mt-4">
       {children}
     </p>
   );

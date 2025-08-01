@@ -11,9 +11,9 @@ export default function Home() {
     <>
       <Header />
 
-      <Container>
-        <ProfileSummary />
-      </Container>
+      {/* <Container> */}
+      <ProfileSummary />
+      {/* </Container> */}
 
       <Container>
         <About />
