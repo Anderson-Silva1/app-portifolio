@@ -67,7 +67,7 @@ type CardProps = {
 
 const Card = ({ title, titleStrong, description }: CardProps) => {
   return (
-    <div className="border-border flex min-w-full flex-col items-center justify-center space-y-2 rounded-2xl border-2 p-8 text-center lg:items-start">
+    <div className="border-border bg-background flex min-w-full flex-col items-center justify-center space-y-2 rounded-2xl border-2 p-8 text-center lg:items-start">
       <p className="text-muted-foreground text-sm font-bold">{title}</p>
       <h3 className="text-chart-1 scroll-m-20 text-2xl font-semibold tracking-tight md:text-3xl">
         {titleStrong}
