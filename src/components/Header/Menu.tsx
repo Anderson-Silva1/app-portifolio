@@ -20,10 +20,10 @@ export const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const linkOption = [
-    { label: "Início", href: "#home" },
-    { label: "Sobre", href: "#sobre" },
-    { label: "Serviços", href: "#servicos" },
-    { label: "Contato", href: "#contato" },
+    { label: "Início", href: "/" },
+    { label: "Sobre", href: "#about" },
+    { label: "Serviços", href: "#services" },
+    { label: "Contato", href: "#contact" },
   ];
 
   return (
@@ -69,7 +69,7 @@ export const Menu = () => {
               </Link>
             ))}
           </nav>
-          <Link href="/contact">
+          <Link href="#contact" onClick={() => setIsOpen(false)}>
             <Button className="bg-chart-1 hover:bg-chart-1 cursor-pointer text-white transition duration-700 hover:opacity-80">
               Entrar em contato
             </Button>

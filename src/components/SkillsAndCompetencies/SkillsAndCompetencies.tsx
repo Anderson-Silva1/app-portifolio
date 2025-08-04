@@ -39,7 +39,7 @@ export const SkillsAndCompetencies = () => {
   };
 
   return (
-    <main className="pt-16">
+    <main className="bg-background3 pt-16">
       <Content>
         <div className="min-h-screen px-[4%]">
           <Title titleText="Habilidades & Tecnologias">

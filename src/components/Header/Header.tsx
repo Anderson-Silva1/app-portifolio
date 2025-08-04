@@ -25,15 +25,15 @@ export const Header = () => {
   }, [prevScrollY]);
 
   const linkOption = [
-    { label: "Início", href: "#" },
-    { label: "Sobre", href: "#" },
-    { label: "Serviços", href: "#" },
-    { label: "Contato", href: "#" },
+    { label: "Início", href: "/" },
+    { label: "Sobre", href: "#about" },
+    { label: "Serviços", href: "#services" },
+    { label: "Contato", href: "#contact" },
   ];
 
   return (
     <header
-      className={`border-border fixed top-0 z-50 flex h-24 w-screen items-center border-b-2 bg-slate-50 transition-transform duration-500 dark:bg-black ${
+      className={`border-border bg-background fixed top-0 z-50 flex h-24 w-screen items-center border-b-2 transition-transform duration-500 ${
         isScrollingUp ? "translate-y-0" : "-translate-y-full"
       }`}
     >
@@ -54,9 +54,6 @@ export const Header = () => {
                 {linkOption.map((option) => (
                   <li key={option.label}>
                     <Link
-                      onClick={() =>
-                        alert("Estamos em manuteção, logo estará pronto")
-                      }
                       href={option.href}
                       className="text-muted-foreground hover:text-primary text-base font-medium transition-colors duration-200"
                     >
@@ -72,12 +69,7 @@ export const Header = () => {
             <div className="flex gap-4">
               <Language />
               <ModeToggle />
-              <Link
-                href="#"
-                onClick={() =>
-                  alert("Estamos em manuteção, logo estará pronto")
-                }
-              >
+              <Link href="#contact">
                 <Button className="bg-chart-1 hover:bg-chart-1 cursor-pointer text-white transition duration-700 hover:opacity-80">
                   Entrar em contato
                 </Button>

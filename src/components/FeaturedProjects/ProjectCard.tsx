@@ -1,77 +1,106 @@
+import { projects } from "@/lib/projects";
+import { ExternalLink, Eye, GitFork, Github, Star } from "lucide-react";
 import Image from "next/image";
-import { Button } from "../ui/button";
 
-type techIcon = {
-  src: string;
-  alt: string;
-};
+const ProjectCard = () => {
+  const featuredProjects = projects.filter((project) => project.featured);
 
-type ProjectCardProps = {
-  title?: string;
-  description?: string;
-  imageSrc?: string;
-  techIcons?: techIcon[];
-};
-
-export const ProjectCard = ({
-  title = "Chronos Pomodoro",
-  description = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis cum nemo incidunt aliquid ipsam facilis error iste est laborum magnam voluptate commodi voluptatibus quae soluta eum necessitatibus rem, consectetur eligendi.",
-  imageSrc = "/imageProjects/chronos-pomodoro.png",
-  techIcons = [],
-}: ProjectCardProps) => {
   return (
-    <div
-      className="border-border text-card-foreground bg-card flex min-h-[450px] max-w-sm min-w-[390px] flex-1 flex-col justify-between rounded-lg border-2 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-      role="article"
-      aria-labelledby={`project-title-${title}`}
-    >
-      <div className="overflow-hidden rounded-t-lg">
-        <Image
-          src={imageSrc}
-          width={400}
-          height={230}
-          alt={`Imagem do projeto ${title}`}
-          className="h-48 w-full object-cover transition-transform duration-300 hover:scale-105"
-        />
-      </div>
-      <div className="flex flex-col justify-between gap-6 p-4">
-        <div>
-          <h2
-            id={`project-title-${title}`}
-            className="mb-2 text-lg font-semibold"
+    <div className="text-foreground mb-20 px-4 pt-8 sm:px-6 lg:px-8">
+      <div
+        className="grid auto-rows-auto grid-cols-[repeat(auto-fit,380px)] justify-center gap-8"
+        style={{ overflowX: "auto" }}
+      >
+        {featuredProjects.map((project, index) => (
+          <div
+            key={project.id}
+            className="group border-border bg-background1 hover:from-background1 hover:to-background2 w-full transform overflow-hidden rounded-2xl border shadow-xl backdrop-blur-sm transition-all duration-500 hover:bg-gradient-to-br hover:shadow-2xl sm:w-[380px]"
+            style={{ animationDelay: `${index * 0.1}s` }}
           >
-            {title}
-          </h2>
-          <p className="line-clamp-4 text-sm">{description}</p>
-        </div>
-        <div className="flex justify-start gap-2">
-          {techIcons.map((icon, index) => (
-            <Image
-              key={index}
-              src={`/logo/${icon.src}`}
-              alt={icon.alt || `Ícone de tecnologia ${index + 1}`}
-              width={24}
-              height={24}
-              className="object-contain"
-              loading="lazy"
-            />
-          ))}
-        </div>
-      </div>
-      <div className="flex items-center justify-between p-4">
-        <Button
-          aria-label="Acessar repositório do projeto"
-          className="rounded-md bg-blue-500 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-blue-600"
-        >
-          Repo
-        </Button>
-        <Button
-          aria-label="Acessar deploy do projeto"
-          className="rounded-md bg-green-500 px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-green-600"
-        >
-          Deploy
-        </Button>
+            {/* Capa */}
+            <div className="relative overflow-hidden">
+              <Image
+                src={project.imageSrc || "/placeholder.svg"}
+                alt={project.title}
+                width={640}
+                height={360}
+                className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-52 md:h-56 lg:h-60"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
+              <div className="absolute top-4 right-4">
+                <span className="from-chart-1 to-chart-2 rounded-full bg-gradient-to-l px-3 py-1 text-xs font-bold text-white">
+                  DESTAQUE
+                </span>
+              </div>
+            </div>
+
+            {/* Conteúdo */}
+            <div className="relative z-10 p-6">
+              <h3 className="hover:from-chart-1 hover:to-chart-2 mb-3 text-xl font-bold transition-all duration-300 hover:bg-gradient-to-r hover:bg-clip-text hover:text-transparent sm:text-2xl">
+                {project.title}
+              </h3>
+
+              <p className="mb-4 text-sm leading-relaxed sm:text-base">
+                {project.description}
+              </p>
+
+              {/* Estatísticas */}
+              <div className="mb-4 flex flex-wrap items-center gap-4 text-sm">
+                <div className="flex items-center gap-1">
+                  <Star className="h-4 w-4" />
+                  <span>{project.stats.stars}</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <GitFork className="h-4 w-4" />
+                  <span>{project.stats.forks}</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Eye className="h-4 w-4" />
+                  <span>{project.stats.views}</span>
+                </div>
+              </div>
+
+              {/* Tecnologias */}
+              <div className="mb-6 flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="border-border bg-chart-4 rounded-full border px-3 py-1 text-sm font-medium"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Links */}
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={project.links.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-gray-700 to-gray-600 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:from-gray-600 hover:to-gray-500 hover:shadow-xl"
+                >
+                  <Github size={16} />
+                  GitHub
+                </a>
+                {project.links.external && (
+                  <a
+                    href={project.links.external}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="from-chart-4 to-chart-1 hover:shadow-chart-1/50 inline-flex flex-1 items-center justify-center gap-2 rounded-xl bg-gradient-to-r px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:scale-105 hover:from-yellow-300 hover:to-orange-600 hover:shadow-xl dark:hover:from-purple-600 dark:hover:to-blue-600"
+                  >
+                    <ExternalLink size={16} />
+                    Demo
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
+
+export default ProjectCard;

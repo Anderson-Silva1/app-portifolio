@@ -4,9 +4,9 @@ import { ContentAbout } from "./ContentAbout";
 
 export const About = () => {
   return (
-    <main className="bg-chart-3 text-foreground min-h-screen">
+    <main className="bg-background2 text-foreground min-h-screen">
       <Content>
-        <div className="scroll-mt-24" id="about">
+        <div id="about">
           <div className="py-8">
             <Title titleText="Sobre Mim">
               Saiba mais sobre minha jornada como desenvolvedor e os projetos em

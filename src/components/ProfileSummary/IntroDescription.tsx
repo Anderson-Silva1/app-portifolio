@@ -1,8 +1,10 @@
 export const IntroDescription = () => (
   <p className="m-auto max-w-[800px] px-[4%] text-center text-sm leading-7 md:text-base [&:not(:first-child)]:mt-6">
-    Sou desenvolvedor Fullstack com mais de 3 anos de experiência em estudos e
+    {/* Sou desenvolvedor Fullstack com mais de 3 anos de experiência em estudos e
     prática, criando soluções funcionais, escaláveis e rentáveis para diferentes
     setores do mercado. Tenho paixão por transformar ideias em sistemas
-    robustos, com foco em performance e usabilidade.
+    robustos, com foco em performance e usabilidade. */}
+    Transformo ideias em soluções digitais usando as melhores tecnologias do
+    mercado. Especializado em criar experiências web modernas e performáticas.
   </p>
 );

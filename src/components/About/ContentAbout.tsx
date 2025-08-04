@@ -2,7 +2,7 @@ export const ContentAbout = () => {
   return (
     <section className="flex flex-col items-center justify-center gap-16 pb-8 lg:flex-row">
       <div className="w-full flex-1">
-        <div className="bg-background rounded-none p-8 lg:rounded-2xl">
+        <div className="rounded-none p-8 lg:rounded-2xl">
           <Paraghaph>
             Olá, Meu nome é Anderson, sou um profissional em transição de
             carreira com sólida experiência técnica em telecomunicações e uma
@@ -53,7 +53,7 @@ type ParaghaphProps = {
 
 const Paraghaph = ({ children }: ParaghaphProps) => {
   return (
-    <p className="m-auto max-w-[600px] text-center indent-8 text-sm leading-7 lg:text-left [&:not(:first-child)]:mt-4">
+    <p className="m-auto max-w-[600px] text-left text-sm leading-7 lg:text-left [&:not(:first-child)]:mt-4">
       {children}
     </p>
   );
