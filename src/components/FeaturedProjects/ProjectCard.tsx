@@ -8,7 +8,7 @@ const ProjectCard = () => {
   return (
     <div className="text-foreground mb-20 px-4 pt-8 sm:px-6 lg:px-8">
       <div
-        className="grid auto-rows-auto grid-cols-[repeat(auto-fit,380px)] justify-center gap-8"
+        className="flex flex-wrap justify-center gap-8"
         style={{ overflowX: "auto" }}
       >
         {featuredProjects.map((project, index) => (
@@ -73,7 +73,7 @@ const ProjectCard = () => {
               </div>
 
               {/* Links */}
-              <div className="flex flex-col gap-3 sm:flex-row">
+              <div className="flex gap-3">
                 <a
                   href={project.links.github}
                   target="_blank"

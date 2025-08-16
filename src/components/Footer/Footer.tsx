@@ -4,18 +4,26 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: "GitHub", href: "https://github.com/anderson", icon: Github },
+    {
+      name: "GitHub",
+      href: "https://github.com/Anderson-Silva1",
+      icon: Github,
+    },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/anderson",
+      href: "https://www.linkedin.com/in/anderson-silva-developer/",
       icon: Linkedin,
     },
     {
       name: "Whatsapp",
-      href: "https://twitter.com/anderson",
+      href: "tel:+5585921606725",
       icon: MessageCircleMore,
     },
-    { name: "Email", href: "mailto:anderson@email.com", icon: Mail },
+    {
+      name: "Email",
+      href: "mailto:anderson.developer360@gmail.com",
+      icon: Mail,
+    },
   ];
 
   return (

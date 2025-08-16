@@ -17,9 +17,14 @@ export const ContentAbout = () => {
           </Paraghaph>
           <Paraghaph>
             Atualmente, busco minha primeira oportunidade como Desenvolvedor
-            Front-End. Tenho interesse em projetos que não apenas gerem valor,
-            mas que também proporcionem crescimento profissional e estejam
-            alinhados com princípios de inovação e propósito.
+            Front-End, com interesse em integrar projetos que não apenas gerem
+            valor, mas também promovam crescimento profissional e estejam
+            alinhados a princípios de inovação e propósito.
+          </Paraghaph>
+          <Paraghaph>
+            Paralelamente, atuo como freelancer no desenvolvimento de sites para
+            a web, entregando soluções personalizadas e de alta qualidade para
+            diferentes nichos e necessidades.
           </Paraghaph>
         </div>
       </div>
@@ -53,7 +58,7 @@ type ParaghaphProps = {
 
 const Paraghaph = ({ children }: ParaghaphProps) => {
   return (
-    <p className="m-auto max-w-[600px] text-left text-sm leading-7 lg:text-left [&:not(:first-child)]:mt-4">
+    <p className="m-auto max-w-[600px] text-left text-sm/tight leading-7 lg:text-left [&:not(:first-child)]:mt-4">
       {children}
     </p>
   );

@@ -130,6 +130,10 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer components {
   .profile-summary-container {
     height: calc(100vh - 6rem);

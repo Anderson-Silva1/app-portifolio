@@ -39,13 +39,13 @@ export default function ContactMain() {
     {
       icon: Phone,
       label: "Telefone",
-      value: "+55 (11) 99999-9999",
-      href: "tel:+5511999999999",
+      value: "+55 (85) 9 2160-6725",
+      href: "tel:+5585921606725",
     },
     {
       icon: MapPin,
       label: "Localização",
-      value: "São Paulo, SP",
+      value: "Fortaleza, CE",
       href: null,
     },
   ];
